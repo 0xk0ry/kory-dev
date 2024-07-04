@@ -21,7 +21,6 @@ export function TopNav() {
           me
         </div>
         <div className="cursor-pointer">blog</div>
-        <div className="cursor-pointer">projects</div>
         <div className="cursor-pointer">others</div>
         <div className="cursor-pointer">github</div>
       </div>
