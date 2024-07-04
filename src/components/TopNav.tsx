@@ -5,7 +5,7 @@ export function TopNav() {
   const router = useRouter();
   return (
     <nav className="mx-auto mb-6 flex h-auto items-center justify-between border-b p-4 font-semibold md:text-xl">
-      <div
+      <div className="cursor-pointer"
         onClick={() => {
           router.push("/");
         }}
@@ -13,11 +13,17 @@ export function TopNav() {
         Kory
       </div>
       <div className="flex items-center gap-4">
-        <div>me</div>
-        <div>blog</div>
-        <div>projects</div>
-        <div>others</div>
-        <div>github</div>
+        <div className="cursor-pointer"
+          onClick={() => {
+            router.push("/me");
+          }}
+        >
+          me
+        </div>
+        <div className="cursor-pointer">blog</div>
+        <div className="cursor-pointer">projects</div>
+        <div className="cursor-pointer">others</div>
+        <div className="cursor-pointer">github</div>
       </div>
     </nav>
   );
