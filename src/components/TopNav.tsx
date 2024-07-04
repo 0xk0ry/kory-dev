@@ -37,11 +37,11 @@ export function TopNav() {
         <div
           className={`cursor-pointer rounded-md px-2 py-[0.1rem] hover:text-slate-600 ${pathname.startsWith("/others") ? "bg-neutral-500" : ""}`}
           onClick={() => {
-            router.push("/others");
+            router.push("/other");
             console.log(pathname);
           }}
         >
-          others
+          other
         </div>{" "}
         <div
           className={`cursor-pointer rounded-md px-2 py-[0.1rem] hover:text-slate-600 ${pathname.startsWith("/github") ? "bg-neutral-500" : ""}`}
