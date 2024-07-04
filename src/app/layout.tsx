@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
+import { TopNav } from "~/components/TopNav";
 
 export const metadata = {
   title: "Kory the Dev",
@@ -15,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">{children}</body>
+      <body className={`flex flex-col bg-black text-white items-center w-[50%] mx-auto`}>
+        <div className="w-4/5 mx-auto">
+          <TopNav />
+          <main>{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
