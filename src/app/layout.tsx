@@ -16,10 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col bg-black text-white items-center w-[50%] mx-auto`}>
-        <div className="w-4/5 mx-auto">
+      <body
+        className={`mx-auto flex flex-col flex-wrap items-center bg-black text-white`}
+      >
+        <div className="mx-auto">
           <TopNav />
-          <main>{children}</main>
+          <main className="w-[50vw] pt-24">{children}</main>
         </div>
       </body>
     </html>

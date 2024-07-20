@@ -123,7 +123,6 @@ export default function HomePage() {
   return (
     <main className="flex-center mx-auto flex flex-col gap-6">
       <Author />
-
       <div>
         <div className="text-2xl leading-loose font-semibold pb-3">Tool Set</div>
         <div className="flex flex-row flex-wrap gap-4">

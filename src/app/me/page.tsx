@@ -124,10 +124,39 @@ export default function HomePage() {
   ];
   return (
     <main className="flex-center mx-auto flex flex-col gap-6">
-      <Author />
-
+      <div className="flex-center mx-auto flex w-full flex-col gap-3">
+        <Author />
+        <div className="text-md leading-loose">
+          I am Trúc but I usually go by Kory on the internet.
+          I am currently an undergraduate studying Computer Science at
+          University of Information Technology, Vietnam.
+          I like to dive into all sort of stuff that interest me. From front-end
+          development to servers, security.
+        </div>
+      </div>
+      <div className=" w-[10%] border-b-2 border-blue-300" />
       <div>
-        <div className="text-2xl leading-loose font-semibold pb-3">Tool Set</div>
+        <div className="pb-3 text-2xl font-semibold leading-loose">
+          Qualification
+        </div>
+        <div className="flex flex-col flex-wrap gap-3">
+          <div>
+            Education: Honor Bachelor in Computer Science at{" "}
+            <Link href={"https://en.uit.edu.vn/"} className="font-semibold">
+              University of Information Technology
+            </Link>
+          </div>
+          <div>Expected Graduation: Spring 2026</div>
+          <div>GPA: 8.23</div>
+          <div>English: IELTS 7.5</div>
+          <div>SAT: 1440</div>
+        </div>
+      </div>
+      <div className=" w-[10%] border-b-2 border-blue-300" />
+      <div>
+        <div className="pb-3 text-2xl font-semibold leading-loose">
+          Tool Set
+        </div>
         <div className="flex flex-row flex-wrap gap-4">
           {skills.map((skill) => (
             <div
@@ -139,9 +168,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <div className="text-2xl leading-loose font-semibold pb-3">Projects</div>
       </div>
     </main>
   );
