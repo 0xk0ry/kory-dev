@@ -1,144 +1,49 @@
+'use client'
+import { useRouter } from "next/navigation";
 import { Author } from "~/components/Author";
 
-export default function HomePage() {
-  const skills = [
+export default function BlogPage() {
+  const blogs24 = [
     {
-      name: "HTML",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "CSS",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Javascript",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Typescript",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "React",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Nextjs",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Nodejs",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Prisma",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Postresql",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Postman",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Redis",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Sqlite",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
-    },
-    {
-      name: "Docker",
-      icon: (
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg"
-          className="h-full object-contain"
-        />
-      ),
+      title: "The future of me",
+      tags: ["talk"],
+      date: "20 July 2024",
+      url: "the-future-of-me",
+      summary:
+        "I talk about the future of me as well what I want to write for my blog.",
     },
   ];
+  const router = useRouter();
   return (
     <main className="flex-center mx-auto flex flex-col gap-6">
-      <Author />
-      <div>
-        <div className="text-2xl leading-loose font-semibold pb-3">Tool Set</div>
-        <div className="flex flex-row flex-wrap gap-4">
-          {skills.map((skill) => (
-            <div
-              className="flex h-10 flex-row items-center gap-2 rounded-md bg-gray-800 px-4 py-2"
-              key={skill.name}
-            >
-              {skill.icon}
-              {skill.name}
+      <div className="flex flex-col">
+        <div className="my-0 text-4xl font-bold hover:cursor-pointer">2024</div>
+        <div className="my-2 w-[15vw] border-b-2 border-slate-400" />
+        <div className="flex flex-row items-center gap-1 pt-5">
+          {blogs24.map((blog) => (
+            <div key={blog.title} className="hover:cursor-pointer" onClick={() => {
+              router.push(`/blog/${blog.url}`)
+            }}>
+              <div className="flex flex-row gap-4">
+                <p className="text-2xl font-semibold">{blog.title}</p>
+                <div>
+                  {blog.tags.map((tag) => (
+                    <div
+                      key={tag}
+                      className="flex flex-row items-center gap-2 rounded-md bg-gray-800 px-2 py-1"
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+                <span className="text-slate-400 my-auto">{blog.date}</span>
+              </div>
+              <div className="text-md text-slate-300 pt-2">
+                {blog.summary}
+                </div>
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <div className="text-2xl leading-loose font-semibold pb-3">Projects</div>
       </div>
     </main>
   );

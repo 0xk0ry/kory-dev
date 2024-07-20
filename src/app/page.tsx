@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Author } from "~/components/Author";
@@ -42,9 +42,9 @@ export default function HomePage() {
           <br />
         </div>
       </div>
-      <div className="w-[10%] border-b-2 border-blue-300" />
-      <div className="text-md border-b-0 border-blue-300 leading-loose">
-        <div className="pb-3">
+      <div className="w-[10%] border-b-2 border-slate-400" />
+      <div className="leading-loose">
+        <div className="pb-3 text-md">
           <Link
             className="text-2xl font-semibold leading-loose hover:cursor-pointer"
             href="https://github.com/KoryTheKorgy?tab=repositories"
@@ -75,12 +75,12 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-      <div className="w-[10%] border-b-2 border-blue-300" />
-      <div className="pb-3">
+      <div className="w-[10%] border-b-2 border-slate-400" />
+      <div className="pb-3 text-md">
         <div
           className="text-2xl font-semibold leading-loose hover:cursor-pointer"
           onClick={() => {
-            router.push(`/blog`)
+            router.push(`/blog`);
           }}
         >
           Blogs

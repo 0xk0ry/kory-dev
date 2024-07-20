@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Author } from "~/components/Author";
 import { TopNav } from "~/components/TopNav";
 
-export default function HomePage() {
+export default function MePage() {
   const skills = [
     {
       name: "HTML",
